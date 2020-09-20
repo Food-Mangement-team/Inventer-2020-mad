@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">MAD_2020_Inventers</string>
+    <string name="msg1">E-mail:Foodorder@gmail.com</string>
+    <string name="msg2">Mobile:077-3567890</string>
+    <string name="login">Login</string>
+    <string name="Register">Register Now</string>
+    <string name="Add_details">Add Details</string>
+    <string name="Delete">Delete</string>
+    <string name="Update">Update</string>
+    <string name="Payment">Pay</string>
+    <string name="View">View Password</string>
+    <string name="ID">Enter ID:</string>
+    <string name="Name">Enter Name:</string>
+    <string name="Email">Entet Email:</string>
+    <string name="Value">Enter Amount:</string>
+    <string name="Date">Enter Date:</string>
+    <string name="Update_Value">Update Amount:</string>
+    <string name="Update_Date">Update Date:</string>
+    <string name="ID_Display">ID</string>
+    <string name="Amount">Amount</string>
+    <string name="Date_display">Date</string>
+    <string name="CID">Enter CID:</string>
+    <string name="Credit_type">Enter Credit_Card_Type:</string>
+    <string name="Password_View">Password</string>
+
+</resources>
