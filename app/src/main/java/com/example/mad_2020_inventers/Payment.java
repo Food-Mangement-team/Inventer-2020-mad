@@ -1,5 +1,6 @@
 package com.example.mad_2020_inventers;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -8,8 +9,11 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class Payment extends AppCompatActivity {
     EditText id, amount, date, cid, Cardtype;
@@ -58,5 +62,29 @@ public class Payment extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "invalid number", Toast.LENGTH_SHORT).show();
 
         }
+    }
+   public void update(View v2){
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+       DatabaseReference myRef1;
+        myRef1 = database.getReference("Payment");
+
+        myRef1.addValueEventListener(new ValueEventListener() {
+
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                pay.setId(Integer.parseInt(id.getText().toString().trim()));
+                pay.setAmount(Float.parseFloat(amount.getText().toString().trim()));
+                pay.setDate(date.getText().toString().trim());
+                pay.setCid(Integer.parseInt(cid.getText().toString().trim()));
+                pay.setCardtype(Cardtype.getText().toString().trim());
+
+
+
+            }
+
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 }
