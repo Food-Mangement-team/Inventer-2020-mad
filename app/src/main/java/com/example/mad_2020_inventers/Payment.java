@@ -3,6 +3,7 @@ package com.example.mad_2020_inventers;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -13,12 +14,15 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 public class Payment extends AppCompatActivity {
     EditText id, amount, date, cid, Cardtype;
     DatabaseReference myRef;
     Payment_data pay;
+    Payment_data pay1;
+
     @Override
 
 
@@ -31,6 +35,7 @@ public class Payment extends AppCompatActivity {
         cid = findViewById(R.id.editTextNumber2);
         Cardtype = findViewById(R.id.editTextTextPersonName2);
         pay = new Payment_data();
+        pay1 = new Payment_data();
 
     }
     public void datasave(View v){
@@ -55,7 +60,8 @@ public class Payment extends AppCompatActivity {
                 pay.setCardtype(Cardtype.getText().toString().trim());
 
 
-                myRef.push().setValue(pay);
+
+                myRef.child("pay1").setValue(pay);
                 Toast.makeText(getApplicationContext(), "succesfully data saved", Toast.LENGTH_SHORT).show();
             }
         } catch (NumberFormatException e) {
@@ -63,12 +69,20 @@ public class Payment extends AppCompatActivity {
 
         }
     }
-   public void update(View v2){
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-       DatabaseReference myRef1;
-        myRef1 = database.getReference("Payment");
 
-        myRef1.addValueEventListener(new ValueEventListener() {
+
+    public void Display(View a) {
+
+   Intent intent = new Intent(this,Display_Payment.class);
+   startActivity(intent);
+
+    }
+        public void update(View v2){
+
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+DatabaseReference myRef3 = FirebaseDatabase.getInstance().getReference().child("Payment");
+
+        myRef3.addValueEventListener(new ValueEventListener() {
 
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
@@ -79,9 +93,41 @@ public class Payment extends AppCompatActivity {
                 pay.setCardtype(Cardtype.getText().toString().trim());
 
 
+                myRef=FirebaseDatabase.getInstance().getReference().child("Payment").child("pay1");
+                myRef.setValue(pay);
+                Toast.makeText(getApplicationContext(), "updated successfully", Toast.LENGTH_SHORT).show();
+            }
+
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+    /* Intent intent = new Intent(this, Update_Payment.class);
+         intent.putExtra("id",id.getText().toString());
+         intent.putExtra("amount",amount.getText().toString());
+         intent.putExtra("date",date.getText().toString());
+
+         startActivity(intent);*/
+    public void delete(View delete) {
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference deleteref = database.getReference("Payment");
+        deleteref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.hasChild("pay1")) {
+
+                    myRef=FirebaseDatabase.getInstance().getReference().child("Payment").child("pay1");
+                    myRef.removeValue();
+                    Toast.makeText(getApplicationContext(), "deleted successfully", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(getApplicationContext(), "no source to show", Toast.LENGTH_SHORT).show();
+                }
+
 
             }
 
+            @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
