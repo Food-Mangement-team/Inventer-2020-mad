@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="Phone" type="id" />
+    <item name="Address" type="id" />
+    <item name="Email" type="id" />
+    <item name="Name" type="id" />
+    <item name="change" type="id" />
+</resources>
