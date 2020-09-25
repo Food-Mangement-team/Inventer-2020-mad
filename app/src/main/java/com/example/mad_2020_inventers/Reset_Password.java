@@ -21,7 +21,7 @@ import java.util.regex.Pattern;
 public class Reset_Password extends AppCompatActivity {
     EditText currentpass, newpass, conpass;
     DatabaseReference reff;
-    Button save,back;
+    Button save;
 
     private String currentPassword = null;
 
@@ -36,7 +36,6 @@ public class Reset_Password extends AppCompatActivity {
 
         reff = FirebaseDatabase.getInstance().getReference("Member");
         save = (Button) findViewById(R.id.save);
-        back=(Button)findViewById(R.id.back);
 
 
         save.setOnClickListener(new View.OnClickListener() {
@@ -75,7 +74,7 @@ public class Reset_Password extends AppCompatActivity {
                         Reset_Password.super.onBackPressed();
 
                     } else {
-                        Toast.makeText(Reset_Password.this, "Password should contain blah blah...", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Reset_Password.this, "Password should contain more than 8 characters", Toast.LENGTH_SHORT).show();
                     }
                 } else {
                     Toast.makeText(Reset_Password.this, "Not matched", Toast.LENGTH_SHORT).show();
