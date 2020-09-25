@@ -1,6 +1,7 @@
 package com.example.mad_2020_inventers;
 
-public class Member { String Name;
+public class Member {
+    String Name;
     String Email;
     String Address;
     String Phone;

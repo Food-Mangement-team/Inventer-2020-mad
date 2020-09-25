@@ -65,27 +65,7 @@ public class Edit_CustomerProfile extends AppCompatActivity {
         deleteAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                final DatabaseReference[] databaseReference = {FirebaseDatabase.getInstance().getReference().child("Member")};
-//                databaseReference[0].addListenerForSingleValueEvent(new ValueEventListener() {
-//                    @Override
-//                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                        if (dataSnapshot.hasChild("username")){
-//                            databaseReference[0] =FirebaseDatabase.getInstance().getReference().child("Member").child("username");
-//                            databaseReference[0].removeValue();
-//                            Toast.makeText(getApplicationContext(),"Deleted successfully",Toast.LENGTH_SHORT).show();
-//
-//                        }
-//                        else {
-//                            Toast.makeText(getApplicationContext(),"No Source to Delete",Toast.LENGTH_SHORT).show();
-//                        }
-//                    }
-//
-//                    @Override
-//                    public void onCancelled(@NonNull DatabaseError error) {
-//
-//                    }
-//                });
-                Intent i=getIntent();
+                         Intent i=getIntent();
                 String username=i.getStringExtra("username");
                 reff = FirebaseDatabase.getInstance().getReference("Member").child(username);
                 reff.removeValue();
