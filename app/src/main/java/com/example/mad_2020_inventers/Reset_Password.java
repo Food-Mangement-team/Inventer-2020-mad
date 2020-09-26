@@ -74,7 +74,7 @@ public class Reset_Password extends AppCompatActivity {
                         Reset_Password.super.onBackPressed();
 
                     } else {
-                        Toast.makeText(Reset_Password.this, "Password should contain more than 8 characters", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Reset_Password.this, "Password should contain more than 8 characters ", Toast.LENGTH_SHORT).show();
                     }
                 } else {
                     Toast.makeText(Reset_Password.this, "Not matched", Toast.LENGTH_SHORT).show();

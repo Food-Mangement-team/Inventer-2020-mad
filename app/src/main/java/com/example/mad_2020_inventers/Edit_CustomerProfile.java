@@ -23,10 +23,12 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class Edit_CustomerProfile extends AppCompatActivity {
+
     TextView Editusername,Editname,Editemail,Editaddress,Editphone;
     Button resetpassword,save,deleteAccount;
     ImageButton usernamepencil,namepencil,emailpencil,addresspencil,phonepencil;
     DatabaseReference reff;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,7 +63,7 @@ public class Edit_CustomerProfile extends AppCompatActivity {
 
     }
 
-    private void deleteAccountbutton() {
+     private void deleteAccountbutton() {
         deleteAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
