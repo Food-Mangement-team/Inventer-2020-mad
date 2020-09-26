@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         register();
 
     }
-
+ //intent to register page
     public void register() {
         Button reg = (Button) findViewById(R.id.Register);
         reg.setOnClickListener(new View.OnClickListener() {
@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+//login to app
 
     public void Login() {
         unam =(EditText)findViewById(R.id.Username);
@@ -65,12 +66,14 @@ public class MainActivity extends AppCompatActivity {
                         String unaMe=unam.getText().toString().trim();
                         System.out.println(PassWord + USerName);
                         try {
+                            //checking the username and password in correct or not
                             if ((USerName.equals(unaMe)) && (PassWord.equals(pass))) {
                                 Toast.makeText(MainActivity.this, "Login is successfully", Toast.LENGTH_SHORT).show();
                                 Intent reg = new Intent(getApplicationContext(), MainActivity3.class);
                                 reg.putExtra("username", snapshotID);
                                 startActivity(reg);
                                 finish();
+
                             } if ((USerName.equals(unaMe)) && (!PassWord.equals(pass))) {
                                 Toast.makeText(MainActivity.this, "Invalid Password", Toast.LENGTH_SHORT).show();
                             } if ((!USerName.equals(unaMe)) && (PassWord.equals(pass))) {

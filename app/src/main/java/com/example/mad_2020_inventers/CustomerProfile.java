@@ -42,6 +42,7 @@ public class CustomerProfile extends AppCompatActivity {
         edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //intent to edit profile
                 Intent i = new Intent(getApplicationContext(),Edit_CustomerProfile.class);
                 Toast.makeText(CustomerProfile.this, "Welcome to Edit Profile", Toast.LENGTH_SHORT).show();
                 i.putExtra("username",username);
@@ -66,6 +67,7 @@ public class CustomerProfile extends AppCompatActivity {
         reff.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                //display customer inserted details
                 String cusuname=snapshot.child("username").getValue(String.class).toString();
                 String cusname=snapshot.child("name").getValue(String.class).toString();
                 String email=snapshot.child("email").getValue(String.class).toString();
