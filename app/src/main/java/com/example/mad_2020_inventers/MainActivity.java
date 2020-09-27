@@ -78,6 +78,8 @@ public class MainActivity extends AppCompatActivity {
                                 Toast.makeText(MainActivity.this, "Invalid Password", Toast.LENGTH_SHORT).show();
                             } if ((!USerName.equals(unaMe)) && (PassWord.equals(pass))) {
                                 Toast.makeText(MainActivity.this, "Invalid Username", Toast.LENGTH_SHORT).show();
+                            }if ((!USerName.equals(unaMe)) && (!PassWord.equals(pass))){
+                                Toast.makeText(MainActivity.this, "Invalid Username and Password ", Toast.LENGTH_SHORT).show();
                             }
                         }
                         catch(Exception e){
