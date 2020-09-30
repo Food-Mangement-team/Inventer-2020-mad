@@ -59,7 +59,7 @@ public class Payment extends AppCompatActivity {
         myRef = database.getReference("Payment");
         try {
             if (TextUtils.isEmpty(name.getText().toString()))
-                Toast.makeText(getApplicationContext(), "pleae enter id", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "pleae enter User Name", Toast.LENGTH_SHORT).show();
             else if (TextUtils.isEmpty(amount.getText().toString()))
                 Toast.makeText(getApplicationContext(), "pleae enter amount", Toast.LENGTH_SHORT).show();
             else if (TextUtils.isEmpty(String.valueOf(day1+"."+month1+"."+year1))) {
@@ -110,7 +110,7 @@ DatabaseReference myRef3 = FirebaseDatabase.getInstance().getReference().child("
 
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                pay.setName(name.getText().toString().trim());
+
                 pay.setAmount(Float.parseFloat(amount.getText().toString().trim()));
                 pay.setDate2(String.valueOf(day+"."+month+"."+year).trim());
                 pay.setCid(Integer.parseInt(cid.getText().toString().trim()));
