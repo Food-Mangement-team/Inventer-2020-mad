@@ -44,13 +44,6 @@ public class MainActivity2 extends AppCompatActivity {
         CheckingExistingUserName();
 
 
-        log.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(i);
-            }
-        });
         reff = FirebaseDatabase.getInstance().getReference().child("Member");
         reg.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,7 +51,7 @@ public class MainActivity2 extends AppCompatActivity {
 
                 try {
                     if (TextUtils.isEmpty(name.getText().toString())) {
-                        Toast.makeText(getApplicationContext(), "Please Enter the name", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Please Enter the name", Toast.LENGTH_SHORT).show(); 
                     } else if (TextUtils.isEmpty(email.getText().toString())) {
                         Toast.makeText(getApplicationContext(), "Please Enter the email", Toast.LENGTH_SHORT).show();
                     }else if (TextUtils.isEmpty(address.getText().toString())) {
@@ -88,6 +81,8 @@ public class MainActivity2 extends AppCompatActivity {
                         member.setPassword(password.getText().toString().trim());
                         reff.child(username.getText().toString()).setValue(member);
                         Toast.makeText(getApplicationContext(), "Data Saved Successfully", Toast.LENGTH_SHORT).show();
+                        Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                        startActivity(i);
                     }
                 } catch (NumberFormatException e) {
 
