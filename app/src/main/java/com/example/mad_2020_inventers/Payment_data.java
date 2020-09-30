@@ -1,18 +1,34 @@
 package com.example.mad_2020_inventers;
 
+
+import java.text.SimpleDateFormat;
+import java.util.Map;
+
 public class Payment_data {
-    Integer id;
+
     Float amount;
-    String date;
+    String name;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDate2() {
+        return date2;
+    }
+
+    public void setDate2(String date2) {
+        this.date2 = date2;
+    }
+
     Integer cid;
+    String date2;
 
-    public Integer getId() {
-        return id;
-    }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public Float getAmount() {
         return amount;
@@ -22,13 +38,7 @@ public class Payment_data {
         this.amount = amount;
     }
 
-    public String getDate() {
-        return date;
-    }
 
-    public void setDate(String date) {
-        this.date = date;
-    }
 
     public Integer getCid() {
         return cid;
