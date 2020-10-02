@@ -13,7 +13,6 @@
         android:theme="@style/AppTheme">
         <activity android:name=".Pizza"></activity>
         <activity android:name=".orderList" />
-        <activity android:name=".MainActivity" />
         <activity android:name=".orderForm" />
 
         <activity
