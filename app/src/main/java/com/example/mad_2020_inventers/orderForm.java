@@ -69,7 +69,7 @@ public class orderForm extends AppCompatActivity {
                     e.printStackTrace();
                 }
 
-                Intent i = new Intent(getApplicationContext(),MainActivity.class);
+                Intent i = new Intent(getApplicationContext(),orderList.class);
                 startActivity(i);
             }
 
