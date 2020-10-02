@@ -16,7 +16,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
-    EditText pw, unam, reg;
+    EditText pw, unam;
     Button sign;
     DatabaseReference reff;
 
