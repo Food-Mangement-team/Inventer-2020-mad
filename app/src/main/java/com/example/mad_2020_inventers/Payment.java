@@ -1,8 +1,5 @@
 package com.example.mad_2020_inventers;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -11,17 +8,14 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ServerValue;
 import com.google.firebase.database.ValueEventListener;
-
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.HashMap;
-import java.util.Map;
 
 public class Payment extends AppCompatActivity {
     EditText name, amount, cid, Cardtype,cid2;
@@ -110,7 +104,7 @@ DatabaseReference myRef3 = FirebaseDatabase.getInstance().getReference().child("
 
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-
+                pay.setName(name.getText().toString().trim());
                 pay.setAmount(Float.parseFloat(amount.getText().toString().trim()));
                 pay.setDate2(String.valueOf(day+"."+month+"."+year).trim());
                 pay.setCid(Integer.parseInt(cid.getText().toString().trim()));
