@@ -137,14 +137,14 @@
         android:id="@+id/textView3"
         android:layout_width="173dp"
         android:layout_height="33dp"
-        android:layout_marginBottom="80dp"
-        android:text="Click And Eat"
+        android:layout_marginBottom="76dp"
+        android:gravity="center"
+        android:text="EASYFOOD"
         android:textColor="#FBF8F8"
         android:textSize="24sp"
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toTopOf="@+id/Username"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.558"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView

@@ -24,7 +24,7 @@ import com.google.firebase.database.ValueEventListener;
 public class CustomerProfile extends AppCompatActivity {
 
     TextView cusun, cname, cemail, cusadd, usph;
-    Button edit;
+    Button edit, signout;
     ImageView back;
     DatabaseReference reff;
 
@@ -41,7 +41,7 @@ public class CustomerProfile extends AppCompatActivity {
         usph=(TextView)findViewById(R.id.cusphone);
         edit = (Button) findViewById(R.id.editprofile);
         back = (ImageView) findViewById(R.id.back);
-
+        signout = (Button) findViewById(R.id.signout);
         Intent li=getIntent();
         final String username= li.getStringExtra("username");
         viewCustomerDetails();
@@ -50,7 +50,7 @@ public class CustomerProfile extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(),Edit_CustomerProfile.class);
                 Toast.makeText(CustomerProfile.this, "Welcome to Edit Profile", Toast.LENGTH_SHORT).show();
-                i.putExtra("username",username);
+                i.putExtra("username", username);
                 startActivity(i);
             }
         });
@@ -58,6 +58,14 @@ public class CustomerProfile extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(), MainActivity3.class);
+                startActivity(i);
+            }
+        });
+        signout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                Toast.makeText(CustomerProfile.this, "sign out", Toast.LENGTH_SHORT).show();
                 startActivity(i);
             }
         });

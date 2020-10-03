@@ -1,5 +1,10 @@
 package com.example.customermanagment;
 
+import android.database.CursorIndexOutOfBoundsException;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import org.junit.Test;
 
 import java.util.regex.Matcher;
@@ -20,6 +25,7 @@ public class ExampleUnitTest {
 
     @Test
     public void checkPassword() {
+
         assertTrue(isValidPassword("fd%^&fdsHIOF54GJFIOs"));
         assertTrue(isValidPassword("Assdsd123@1233:'"));
         assertTrue(isValidPassword("dFHJSsdh123@475?;"));
@@ -49,5 +55,6 @@ public class ExampleUnitTest {
         Matcher matcher = pattern.matcher(password);
         return matcher.matches();
     }
+
 }
 
