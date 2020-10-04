@@ -4,17 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/back"
+    android:backgroundTint="#FFFFFF"
     tools:context=".MainActivity">
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="332dp"
-        android:text="Button"
+        android:layout_marginBottom="240dp"
+        android:backgroundTint="#4CAF50"
+        android:text="Order Now"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.56"
+        app:layout_constraintHorizontal_bias="0.57"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="447dp"
+        android:layout_height="794dp"
+        app:srcCompat="@drawable/back"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-23dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
