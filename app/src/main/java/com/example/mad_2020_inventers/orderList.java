@@ -18,7 +18,6 @@ import com.google.firebase.database.ValueEventListener;
 
 public class orderList extends AppCompatActivity {
 
-
     TextView txtName1, txtQuantity1, txtPaymentMethod1;
 
     String name;
