@@ -137,24 +137,15 @@ public class Edit_CustomerProfile extends AppCompatActivity {
 
                 if (phone.isEmpty()){
                     EditingUserName.setError("change!!");
-
-                }
-                else
-                {
-                    if (phone.length()!=10) {
+                } else {
+                    if (phone.length() != 10) {
                         EditingUserName.setError("Invalid number");
-
-                    }
-                    else
-                        {
-
+                    } else {
                         updatephoneDialog(phone);
-                            EditingUserName.setText(phone);
+                        EditingUserName.setText(phone);
                         alertDialog.dismiss();
                     }
                 }
-
-
             }
 
 
@@ -202,7 +193,6 @@ public class Edit_CustomerProfile extends AppCompatActivity {
 
                     }
                 });
-
                 return true;
             }
         });
