@@ -62,7 +62,7 @@ public class Edit_CustomerProfile extends AppCompatActivity {
         deleteAccountbutton();
 
     }
-
+//delete the user account
     private void deleteAccountbutton() {
         deleteAccount.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,6 +78,7 @@ public class Edit_CustomerProfile extends AppCompatActivity {
         });
     }
 
+    //intent to reset password
     private void resetpasswordButton() {
         resetpassword.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -107,7 +108,7 @@ public class Edit_CustomerProfile extends AppCompatActivity {
         });
     }
 
-
+    //edit the phone number
     private void editphone() {
         phonepencil.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -204,6 +205,8 @@ public class Edit_CustomerProfile extends AppCompatActivity {
         });
 
     }
+
+    // edit the current address
     private void editaddress() {
         addresspencil.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -305,6 +308,7 @@ public class Edit_CustomerProfile extends AppCompatActivity {
 
     }
 
+    // edit the email address
     private void editemail() {
         emailpencil.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -315,9 +319,6 @@ public class Edit_CustomerProfile extends AppCompatActivity {
             }
         });
     }
-
-
-    //update email
 
     private void updateemail(final String email) {
         //get dialog box to change the user name

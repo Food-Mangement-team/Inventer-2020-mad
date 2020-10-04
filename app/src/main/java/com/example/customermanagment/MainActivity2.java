@@ -56,7 +56,7 @@ public class MainActivity2 extends AppCompatActivity {
         reg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+// check the input are valid
                 try {
                     if (TextUtils.isEmpty(name.getText().toString())) {
                         Toast.makeText(getApplicationContext(), "Please Enter the name", Toast.LENGTH_SHORT).show();
@@ -78,7 +78,7 @@ public class MainActivity2 extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "Password wants At least 8 characters", Toast.LENGTH_SHORT).show();
                     }
 
-
+//insert the data if the conditions are valid
                     else {
                         member.setName(name.getText().toString().trim());
                         member.setEmail(email.getText().toString().trim());

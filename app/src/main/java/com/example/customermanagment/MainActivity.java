@@ -61,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
                         String pass=pw.getText().toString().trim();
                         String unaMe=unam.getText().toString().trim();
                         System.out.println(PassWord + USerName);
+                        //check the password and username are in the database
                         try {
                             if ((USerName.equals(unaMe)) && (PassWord.equals(pass))) {
                                 Toast.makeText(MainActivity.this, "Login is successfully", Toast.LENGTH_SHORT).show();
