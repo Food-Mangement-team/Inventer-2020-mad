@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "481743448891",
-    "firebase_url": "https://mad-2020-inventers.firebaseio.com",
-    "project_id": "mad-2020-inventers",
-    "storage_bucket": "mad-2020-inventers.appspot.com"
+    "project_number": "540481765882",
+    "firebase_url": "https://foodapp-239d5.firebaseio.com",
+    "project_id": "foodapp-239d5",
+    "storage_bucket": "foodapp-239d5.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:481743448891:android:4ecfe37d98d4a7a983e51e",
+        "mobilesdk_app_id": "1:540481765882:android:1593e3e7f8a6f9d08f6443",
         "android_client_info": {
-          "package_name": "com.example.mad_2020_inventers"
+          "package_name": "com.example.foodapp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "481743448891-552k0lmgfmgmgs10f3m5br5r72cbhkmk.apps.googleusercontent.com",
+          "client_id": "540481765882-dls2mecdkca3evbg38tt450l07n8o9lj.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyB5kNOoDi1nBm6SaS3uUxpC4TDuAr3pa-U"
+          "current_key": "AIzaSyDvY6TIOw3ZriFFG2BueXvPpox42yYx9fc"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "481743448891-552k0lmgfmgmgs10f3m5br5r72cbhkmk.apps.googleusercontent.com",
+              "client_id": "540481765882-dls2mecdkca3evbg38tt450l07n8o9lj.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
