@@ -1,2 +1,2 @@
 include ':app'
-rootProject.name = "MAD_2020_Inventers"
+rootProject.name = "FoodApp"
