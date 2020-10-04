@@ -43,8 +43,6 @@ Intent intent= getIntent();
         q1.addValueEventListener(valueEventListener);
 
 
-
-
     }
     ValueEventListener valueEventListener = new ValueEventListener(){
         public void onDataChange(@NonNull DataSnapshot snapshot) {
