@@ -1,14 +1,13 @@
 package com.example.mad_2020_inventers;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -73,6 +72,10 @@ public void delete(View v){
     reff.removeValue();
     Intent intent2 =  new Intent(this, Display_Payment.class);
     startActivity(intent2);
+}
+public void ok(View view){
+    Intent intent = new Intent(this,Forgotton_Password.class);
+    startActivity(intent);
 }
 
     }

@@ -1,8 +1,5 @@
 package com.example.mad_2020_inventers;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -10,6 +7,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -25,7 +25,6 @@ public class orderForm extends AppCompatActivity {
     public static final String EXTRA_MESSAGE = "com.example.foodapp.MESSAGE";
 
     private OrderItemListClass ord;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,7 +69,7 @@ public class orderForm extends AppCompatActivity {
                     e.printStackTrace();
                 }
 
-                Intent i = new Intent(getApplicationContext(),MainActivity.class);
+                Intent i = new Intent(getApplicationContext(),orderList.class);
                 startActivity(i);
             }
 

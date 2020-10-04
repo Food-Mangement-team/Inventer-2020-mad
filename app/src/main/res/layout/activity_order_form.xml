@@ -28,7 +28,8 @@
         app:layout_constraintEnd_toStartOf="@+id/itemName"
         app:layout_constraintHorizontal_bias="0.051"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="32dp" />
 
     <TextView
         android:id="@+id/textView10"
@@ -63,11 +64,13 @@
         android:layout_marginBottom="224dp"
         android:backgroundTint="#4CAF50"
         android:onClick="insert"
-        android:text="@string/btnConfirm"
+        android:text="@string/Confirm"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView17"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="1.0"
+        android:layout_marginLeft="60dp"
+        tools:ignore="OnClick" />
 
     <TextView
         android:id="@+id/textView12"
@@ -99,7 +102,8 @@
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView17"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginLeft="196dp" />
 
 
     <EditText
@@ -113,7 +117,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/Quantity"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginLeft="100dp" />
 
     <Button
         android:id="@+id/button5"
@@ -121,7 +126,7 @@
         android:layout_height="wrap_content"
         android:backgroundTint="#4CAF50"
         android:text="Show the order"
-        android:textColor="@color/overlayActionBar"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
