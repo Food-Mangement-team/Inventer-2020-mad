@@ -17,8 +17,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+
 
 public class MainActivity2 extends AppCompatActivity {
 
@@ -38,11 +37,13 @@ public class MainActivity2 extends AppCompatActivity {
         username = (EditText) findViewById(R.id.Username);
         password = (EditText) findViewById(R.id.Password);
         reg = (Button) findViewById(R.id.change);
+        final String emailpattern = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
         member = new Member();
 
 
 
         CheckingExistingUserName();
+
 
         TextView log = (TextView) findViewById(R.id.Login);
         log.setOnClickListener(new View.OnClickListener() {
@@ -62,16 +63,18 @@ public class MainActivity2 extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "Please Enter the name", Toast.LENGTH_SHORT).show();
                     } else if (TextUtils.isEmpty(email.getText().toString())) {
                         Toast.makeText(getApplicationContext(), "Please Enter the email", Toast.LENGTH_SHORT).show();
-                    }else if (TextUtils.isEmpty(address.getText().toString())) {
+                    } else if (!(email.getText().toString().trim().matches(emailpattern))) {
+                        Toast.makeText(getApplicationContext(), "invalid email Address", Toast.LENGTH_SHORT).show();
+                    } else if (TextUtils.isEmpty(address.getText().toString())) {
                         Toast.makeText(getApplicationContext(), "Please Enter the Address", Toast.LENGTH_SHORT).show();
                     } else if (TextUtils.isEmpty(phone.getText().toString())) {
                         Toast.makeText(getApplicationContext(), "Please Enter the Phone Number", Toast.LENGTH_SHORT).show();
-                    }else if (!(phone.length()==10)){
-                        Toast.makeText(getApplicationContext(), "invalid phone number", Toast.LENGTH_SHORT).show(); }
-                    else if (TextUtils.isEmpty(username.getText().toString())) {
+                    } else if (!(phone.length() == 10)) {
+                        Toast.makeText(getApplicationContext(), "invalid phone number", Toast.LENGTH_SHORT).show();
+                    } else if (TextUtils.isEmpty(username.getText().toString())) {
                         Toast.makeText(getApplicationContext(), "Please Enter the Username", Toast.LENGTH_SHORT).show();
-                    }else if (!(username.length()>8)){
-                            Toast.makeText(getApplicationContext(), "Username wants at lest 8 characters", Toast.LENGTH_SHORT).show();
+                    } else if (!(username.length() > 8)) {
+                        Toast.makeText(getApplicationContext(), "Username wants at lest 8 characters", Toast.LENGTH_SHORT).show();
                     } else if (TextUtils.isEmpty(password.getText().toString())) {
                         Toast.makeText(getApplicationContext(), "Please Enter the Password", Toast.LENGTH_SHORT).show();
                     }else if ((password.length()<8)){
@@ -119,9 +122,7 @@ public class MainActivity2 extends AppCompatActivity {
                     public void onDataChange( DataSnapshot dataSnapshot) {
                               if (dataSnapshot.exists()){
                                   username.setError("Username Already Exist");
-
-
-}
+                              }
                     }
 
                     @Override
@@ -139,6 +140,4 @@ public class MainActivity2 extends AppCompatActivity {
         });
 
     }
-
-
 }

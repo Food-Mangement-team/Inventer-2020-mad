@@ -124,13 +124,15 @@ public class Reset_Password extends AppCompatActivity {
     private void setCurrentPassword(String currentPassword) {
         this.currentPassword = currentPassword;
     }
-//validate the new password and confirm password
-    private boolean isValidPassword(String password) {
+
+    //validate the new password and confirm password
+    public boolean isValidPassword(String password) {
         String patternString = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}$";//regular expression
         Pattern pattern = Pattern.compile(patternString);
         Matcher matcher = pattern.matcher(password);
         return matcher.matches();
     }
+
 
 }
 

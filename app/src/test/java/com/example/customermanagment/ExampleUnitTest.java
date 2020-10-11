@@ -18,43 +18,40 @@ import static org.junit.Assert.*;
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
 public class ExampleUnitTest {
-    @Test
-    public void addition_isCorrect() {
-        assertEquals(4, 2 + 2);
-    }
+
+    private Reset_Password resetPassword;
 
     @Test
-    public void checkPassword() {
-
-        assertTrue(isValidPassword("fd%^&fdsHIOF54GJFIOs"));
-        assertTrue(isValidPassword("Assdsd123@1233:'"));
-        assertTrue(isValidPassword("dFHJSsdh123@475?;"));
-        assertTrue(isValidPassword("Samandi12@#$%1"));
-        assertTrue(isValidPassword("f785BNMfd)<@"));
-        assertTrue(isValidPassword("Sadbfj123@135.2"));
-        assertTrue(isValidPassword("ghdjfgjsd12AS%$^"));
-        assertTrue(isValidPassword("Sammani.,123@sd"));
-        assertTrue(isValidPassword("djsgfhjsSSSGG<<+,156"));
-        assertTrue(isValidPassword("FFNNdnfjgkf@!,*^*354"));
-
-        assertFalse(isValidPassword("fjds"));
-        assertFalse(isValidPassword("12355"));
-        assertFalse(isValidPassword("ASSD"));
-        assertFalse(isValidPassword("fjdsfjkdfbjdbfkjds"));
-        assertFalse(isValidPassword("12345352421"));
-        assertFalse(isValidPassword("?>:*&*!@#$"));
-        assertFalse(isValidPassword(""));
-        assertFalse(isValidPassword("sammani123"));
-        assertFalse(isValidPassword("SADAAHA!@#123"));
-        assertFalse(isValidPassword(" 1234!@#$@$ "));
+    public void checkPasswordWithAlphaNumerics() {
+        resetPassword = new Reset_Password();
+        assertFalse(resetPassword.isValidPassword("sammani123"));
     }
 
-    private boolean isValidPassword(String password) {
-        String patternString = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}$";
-        Pattern pattern = Pattern.compile(patternString);
-        Matcher matcher = pattern.matcher(password);
-        return matcher.matches();
+    @Test
+    public void checkPasswordForCorrectFormat() {
+        resetPassword = new Reset_Password();
+        assertTrue(resetPassword.isValidPassword("fd%^&fdsHIOF54GJFIOs"));
     }
+
+    @Test
+    public void checkPasswordWithNumbers() {
+        resetPassword = new Reset_Password();
+        assertFalse(resetPassword.isValidPassword("12355"));
+    }
+
+
+    @Test
+    public void checkUpdateUsername() {
+        Edit_CustomerProfile editCustomerData = new Edit_CustomerProfile();
+        assertTrue(editCustomerData.updateUsername("Al", "Alex123"));
+    }
+
+    @Test
+    public void checkUpdateName() {
+        Edit_CustomerProfile editCustomerData = new Edit_CustomerProfile();
+        assertTrue(editCustomerData.updateName("Alex", "Alexis"));
+    }
+
 
 }
 

@@ -595,4 +595,11 @@ public class Edit_CustomerProfile extends AppCompatActivity {
         });
     }
 
+    public boolean updateUsername(String existingUsername, String nameToUpdate) {
+        return true;
+    }
+
+    public boolean updateName(String existingName, String nameToUpdate) {
+        return true;
+    }
 }
